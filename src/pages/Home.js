@@ -1,11 +1,12 @@
 //1. Import Area
 import React from 'react'
 //2. Definition Area
-export default function Home() {
+function Home() {
     return (
-        <div>Home</div>
+        <h2>Home Area</h2>
     )
 }
 
 
 //3. export Area
+export default Home;

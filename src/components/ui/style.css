@@ -1,0 +1,34 @@
+header{
+    height: 100px;
+    background-color: #a7adb6;
+    display: flex;
+    justify-content: center;
+    color:#000
+}
+main{
+    background-color: rgb(179, 235, 239);
+    min-height: 1000px;
+    
+    
+}
+.aside{
+    background-color: rgb(78, 58, 94);
+    min-height: 1200px;
+    color: #000;
+    font-weight: bold;
+    padding-top: 30px;
+    text-align: center;
+}
+footer{
+    height: 120px;
+    background-color: #432c06;
+   text-align: center;
+    font-size: 35px;
+    color: #000;
+}
+.nav-link{
+    color:#000;
+    font-size: large;
+    font-weight: 600;
+    margin-top: 20px;
+}
