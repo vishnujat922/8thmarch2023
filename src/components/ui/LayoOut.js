@@ -20,11 +20,11 @@ export default class LayOut extends Component {
       <>
         <Header />
         <main>
-          <Row className="h-100">
+          <Row >
             <Col sm={2} className="v_tbdr h-100" >
               <Aside />
             </Col>
-            <Col sm={8} className="v_tbdr h-100 section">
+            <Col sm={8} className="v_tbdr h-100">
               <Outlet />
             </Col>
             <Col sm={2} className="v_tbdr h-100">

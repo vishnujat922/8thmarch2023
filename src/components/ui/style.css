@@ -2,8 +2,9 @@ header{
     height: 100px;
     background-color: #a7adb6;
     display: flex;
-    justify-content: center;
-    color:#000
+    padding-right: 20px;
+    text-align: center;
+    color:white
 }
 main{
     background-color: rgb(179, 235, 239);
@@ -19,16 +20,20 @@ main{
     padding-top: 30px;
     text-align: center;
 }
+#Home{
+    text-align: center;
+    line-height: 500px;
+}
 footer{
-    height: 120px;
+    height: 150px;
     background-color: #432c06;
    text-align: center;
     font-size: 35px;
     color: #000;
 }
 .nav-link{
-    color:#000;
-    font-size: large;
+    color:#3a3939;
+    font-size: 24px;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 50px;
 }

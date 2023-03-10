@@ -3,7 +3,7 @@ import React from 'react'
 //2. Definition Area
 function Home() {
     return (
-        <h2>Home Area</h2>
+        <h2 id='Home'>Home Area</h2>
     )
 }
 
