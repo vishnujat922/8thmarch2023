@@ -1,20 +1,20 @@
 header{
     height: 100px;
-    background-color: #a7adb6;
+    background-color: #6f8ebc;
     display: flex;
     padding-right: 20px;
     text-align: center;
     color:white
 }
 main{
-    background-color: rgb(179, 235, 239);
-    min-height: 1000px;
+    background-color: rgb(107, 189, 199);
+    height: 1000px;
     
     
 }
 .aside{
-    background-color: rgb(78, 58, 94);
-    min-height: 1200px;
+    background-color: rgb(123, 154, 175);
+    height: 100%;
     color: #000;
     font-weight: bold;
     padding-top: 30px;
@@ -25,7 +25,7 @@ main{
     line-height: 500px;
 }
 footer{
-    height: 150px;
+    height: 100px;
     background-color: #432c06;
    text-align: center;
     font-size: 35px;
@@ -36,4 +36,7 @@ footer{
     font-size: 24px;
     font-weight: 600;
     margin-top: 50px;
+}
+.main-head{
+    text-align: center;
 }

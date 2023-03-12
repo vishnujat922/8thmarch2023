@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Navigation() {
     return (
             <>
-                <h1>Create Student</h1>
+                <h1 className='main-head'>Create Student</h1>
                 <Nav className='navigation'
             
                     activeKey="/home"

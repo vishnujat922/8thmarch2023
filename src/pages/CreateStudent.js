@@ -10,7 +10,7 @@ export default function CreateStudent() {
   //useSomething() will be A Hook Function
   //useEffect(cbfn,dependency Array)
   useEffect(() => {
-    fetch('http://localhost:1337/api/students', {
+    fetch('http://localhost:1337/api/students?populate=*', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -54,30 +54,40 @@ export default function CreateStudent() {
       .then(data => {
         alert("Student Data Inserted Successfully");
         console.log(data);
+        Document.querySelector('table#mytbl tbody').innerHTML += `<tr key={idx}>
+                                                                    <td></td>  
+                                                                    <td>${document.getElementById('Student_name').value}</td>
+                                                                    <td>S</td>
+                                                                    <td>
+                                                                      <Button className='btn btn-primary btn-sm me-2 '>View</Button>
+                                                                      <Button className='btn btn-success btn-sm me-2'>Edit</Button>
+                                                                      <Button id="" className='btn btn-danger btn-sm me-2'onClick={(e)=>{deleteStudent(e)}}>Delete</Button>
+                                                                    </td>
+                                                                  </tr>`;
       })
       .catch();
   }
 
-  let deleteStudent = (e)=>{
+  let deleteStudent = (e) => {
     let tr = e.target.closest('tr');
     console.log(tr.querySelector('td:first-child').innerHTML);
     let sid = e.target.closest('tr').querySelector('td:first-child').innerHTML
 
     let x = window.confirm('Do you want to really delete Student data');
     console.log(typeof x);
-    if(x === true){
+    if (x === true) {
       //alert('lets call the delete API');
-       fetch(`http://localhost:1337/api/students/${sid}`,{
-        method:"DELETE"
-       })
-       .then(res=>res.json())
-       .then(data=>{
-        console.log(data)
-        tr.remove();
-        alert('Student Data Deleted Successfully');
-       })
-       .catch(err=>err)
-          }
+      fetch(`http://localhost:1337/api/students/${sid}`, {
+        method: "DELETE"
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          tr.remove();
+          alert('Student Data Deleted Successfully');
+        })
+        .catch(err => err)
+    }
     //alert('Okay');
   }
 
@@ -111,11 +121,12 @@ export default function CreateStudent() {
         <br />
         <hr />
         <br />
-        <Table striped bordered hover>
+        <Table striped bordered hover id='mytbl'>
           <thead>
             <tr className='text-center'>
               <th>Id</th>
               <th>Student Name</th>
+              <th>Teacher Name</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -125,10 +136,15 @@ export default function CreateStudent() {
                 return <tr key={idx}>
                   <td>{cv.id}</td>
                   <td>{cv.attributes.name}</td>
+                  <td>{
+                    cv.attributes.teachers.data.map((cv2, idx2, arr2) => {
+                      return cv2.attributes.name;
+                    }).toString()
+                  }</td>
                   <td>
                     <Button className='btn btn-primary btn-sm me-2 '>View</Button>
                     <Button className='btn btn-success btn-sm me-2'>Edit</Button>
-                    <Button id={`sid ${cv.id}`} className='btn btn-danger btn-sm me-2'onClick={(e)=>{deleteStudent(e)}}>Delete</Button>
+                    <Button id={`sid ${cv.id}`} className='btn btn-danger btn-sm me-2' onClick={(e) => { deleteStudent(e) }}>Delete</Button>
                   </td>
                 </tr>
               })
